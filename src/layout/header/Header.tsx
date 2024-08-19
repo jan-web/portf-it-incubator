@@ -13,5 +13,7 @@ export const Header: React.FC = () => {
 };
 
 const StyledHeader = styled.header`
-    background-color: #93c093;
+    background-color: #d4ffd3;
+		display: flex;
+		justify-content: space-between;
 `
