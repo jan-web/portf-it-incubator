@@ -8,7 +8,7 @@ export const Slogan = () => {
     <StyledSlogan>
       <SectionTitle>I Am Available For Freelance</SectionTitle>
       <Button>Hire me</Button>
-      </StyledSlogan>
+    </StyledSlogan>
   )
 }
 
