@@ -33,6 +33,8 @@ ul {
 button {
   background-color: unset;
   border: 0;
+  cursor: pointer;
+  color: ${theme.colors.font};
 }
 
 section {
