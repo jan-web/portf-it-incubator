@@ -35,14 +35,15 @@ const StyledMain = styled.section`
 `
 
 const Avatar = styled.img`
-  width: 350px;
-  height: 430px;
+  /* width: 350px; */
+  width: 252px;
+  /* height: 430px; */
   object-fit: cover;
   margin-right: 20px;
 
   @media ${theme.media.mobile} {
-    width: 310px;
-    height: 380px;
+    /* width: 310px;
+    height: 380px; */
 
   }
 `
@@ -84,26 +85,31 @@ const SmallText = styled.span`
 const PhotoWrapper = styled.div`
   position: relative;
   z-index: 0;
-  top: 24px;
-  left: -60px;
+  /* top: 24px;
+  left: -60px; */
 
   &::before {
       content: '';
-      width: 360px;
-      height: 470px;
+      /* width: 360px;
+      height: 470px; */
+      width: 311px;
+      height: 398px;
       border: 5px solid ${theme.colors.accent};
 
-      top: -24px;
+      top: -2px;
       left: 24px;
       position: absolute;
       z-index: -1;
 
       @media ${theme.media.mobile} {
-        width: 314px;
-        height: 414px;
+        width: 311px;
+        height: 398px;
         top: -17px;
         left: 20px;
       }
+  }
+  @media  ${theme.media.mobile} {
+    margin-top: 65px;
   }
 
 `
