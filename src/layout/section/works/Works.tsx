@@ -7,40 +7,78 @@ import { Work } from './work/Work';
 import socialImg from './../../../assets/images/proj-1.png';
 import timerImg from './../../../assets/images/proj-2.png';
 import { Container } from '../../../components/Container';
+import {S} from './Works_Styles';
 
 const items = ['All', 'landing page', 'React', 'spa'];
 
-export const Works = () => {
+const worksData = [
+	{
+			title: 'Social Network',
+			src: socialImg,
+			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			type: "spa",
+			id: 1
+	},
+
+	{
+			title: 'Timer',
+			src: timerImg,
+			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim',
+			type: "react",
+			id: 2
+	},
+	{
+			title: 'Social Network',
+			src: socialImg,
+			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			type: "landing",
+			id: 3
+	},
+	{
+			title: 'Social Network',
+			src: socialImg,
+			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			type: "landing",
+			id: 4
+	},
+	{
+			title: 'Timer',
+			src: timerImg,
+			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim',
+			type: "react",
+			id: 5
+	},
+	{
+			title: 'Timer',
+			src: timerImg,
+			text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim',
+			type: "react",
+			id: 6
+	},
+]
+
+export const Works: React.FC = () => {
 	return (
-		<StyledWorks>
+		<S.Works>
 			<Container>
 
 
 				<SectionTitle>Works</SectionTitle>
 				<TabMenu menuItems={items} />
 				<FlexWrapper justify='space-between' align={"flex-start"} wrap={'wrap'}>
+					{worksData.map(work => (
 					<Work
-						title={'Social Network'}
-						text={
-							'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-						}
-						src={socialImg}
+						title={work.title}
+						text={work.text}
+						src={work.src}
 					/>
-					<Work
-						title={'Timer'}
-						text={
-							'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-						}
-						src={timerImg}
-					/>
+					))}
+
+
 				</FlexWrapper>
 			</Container>
-		</StyledWorks>
+		</S.Works>
 	);
 };
 
-const StyledWorks = styled.section`
-	${FlexWrapper} {
-		gap: 30px;
-	}
-`;
+
