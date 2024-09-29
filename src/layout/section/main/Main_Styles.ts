@@ -66,7 +66,7 @@ const PhotoWrapper = styled.div`
       content: '';
       /* width: 360px;
       height: 470px; */
-      width: 311px;
+      width: 263px;
       height: 398px;
       border: 5px solid ${theme.colors.accent};
 

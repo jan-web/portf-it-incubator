@@ -26,7 +26,7 @@ export const Header: React.FC = () => {
 					<Logo />
 					{/* <DesktopMenu menuItems={items} />
 					<MobileMenu menuItems={items} /> */}
-					{width < breakpoint ? <DesktopMenu menuItems={items} />
+					{width > breakpoint ? <DesktopMenu menuItems={items} />
 															: <MobileMenu menuItems={items} />}
 
 				</FlexWrapper>
