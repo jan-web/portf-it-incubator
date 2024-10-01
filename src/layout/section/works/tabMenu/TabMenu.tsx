@@ -1,13 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from '../../../../components/Link';
-export const TabMenu = (props: { menuItems: Array<string> }) => {
+
+export type TabsStatusType = 'all' | 'landing' | 'react' | 'spa'
+
+type TabMenuPropsType = {
+	tabsItems: Array<{status: TabsStatusType, title: string}>
+	changeFilterStatus: (value: TabsStatusType) => void;
+	currentFilterStatus: string;
+}
+
+export const TabMenu = (props: TabMenuPropsType) => {
 	return (
 		<StyledTabMenu>
 			<ul>
-				{props.menuItems.map((item, index) =>
+				{props.tabsItems.map((item, index) =>
 				(<ListItem key={index}>
-					<Link href={item}>{item}</Link>
+					<Link as={"button"} active={props.currentFilterStatus === item.status} onClick={() => {props.changeFilterStatus(item.status)}}>{item.title}</Link>
 				</ListItem>)
 				)}
 

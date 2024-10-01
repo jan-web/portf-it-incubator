@@ -1,31 +1,39 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { theme } from '../styles/Theme';
 
-export const Link = styled.a`
-	font-weight: 400;
-	font-size: 14px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	padding: 10px;
-  position: relative;
-	z-index: 0;
+export const Link = styled.a<{active?: boolean}>`
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 10px;
 
-	&:hover {
-		&::before {
-			height: 10px;
-		}
-	}
+    position: relative;
+    z-index: 0;
 
-	&::before {
-		content: '';
-		display: inline-block;
+    &:hover {
+        &::before{
+            height: 10px;
+        }
+    }
 
-		background-color: ${theme.colors.accent};
+    &::before {
+        content: "";
+        display: inline-block;
+        background-color: ${theme.colors.accent};
 
-		position: absolute;
-		bottom: 5px;
-		left: 0;
-		right: 0;
-		z-index: 1;
-	}
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 0;
+
+
+
+        ${props => props.active && css<{active?: boolean}>`
+        height: 10px;
+
+        `}
+    }
 `
